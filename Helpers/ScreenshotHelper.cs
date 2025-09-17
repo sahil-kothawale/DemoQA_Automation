@@ -9,7 +9,7 @@ namespace DemoQA_Automation.Helpers
         {
             if (driver != null)
             {
-                ITakesScreenshot? screenshotDriver = driver as ITakesScreenshot;
+                ITakesScreenshot? screenshotDriver = (ITakesScreenshot)driver;
                 Screenshot screenshot = screenshotDriver!.GetScreenshot();
                 screenshot.SaveAsFile($"{path}/{scenarioContext.ScenarioInfo.Title}_{DateTime.Now}");
             }
